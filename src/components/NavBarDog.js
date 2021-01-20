@@ -9,12 +9,12 @@ class NavBarDog extends React.Component {
     render(){
         return(
             <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">Dog Book</Navbar.Brand>
+            <Navbar.Brand href="/">Dog Book</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                <Nav.Link href="#home">Breeds</Nav.Link>
-                <Nav.Link href="#link">About</Nav.Link>
+                <Nav.Link href="#/breeds">Breeds</Nav.Link>
+                <Nav.Link href="#/about">About</Nav.Link>
                 </Nav>
                 <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />

@@ -14,25 +14,7 @@ class BreedPage extends React.Component{
         }
     }
 
-
-    componentDidMount(){
-    axios.get(`https://dog.ceo/api/breeds/list/all`)
-    .then((r) =>{
-        const BreedListkeys =[]
-        //console.log(r);
-        //console.log(r.data.message);
-        const arrBreeds =r.data.message; 
-        for (const key of Object.keys(arrBreeds)) {
-                    BreedListkeys.push(key);
-        }
-        this.setState({breendList:BreedListkeys})
-        console.log('this.state.breendList',this.state.breendList)
-    })
-    }
     render(){
-        const BreedCards = this.state.breendList.map( (breed, index) => {
-            return <Col xs={6} lg={3}><BreedCard key={index} typeBreed={breed}/></Col>
-        });
         return(
             <div>
                 <NavBarDog/>
@@ -45,9 +27,6 @@ class BreedPage extends React.Component{
                 <Button variant="primary">Woof!</Button>
                 </p>  
             </Jumbotron>
-            <Row>
-                {BreedCards}
-            </Row>
             </div>
             );
     }

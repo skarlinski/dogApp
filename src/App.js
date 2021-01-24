@@ -15,11 +15,10 @@ class App extends React.Component {
     }
   }
   updateBreedList= ()=>{
-    this.setState({isShowBreeds:false});
-    this.setState({isShowBreeds:true});
+    this.forceUpdate()
   }
   render(){
-    const showBreedsList =this.state.isShowBreeds==true ?  <BreedList updateBreedList={this.updateBreedList}/>:null;
+    const showBreedsList = this.state.isShowBreeds==true ?  <BreedList updateBreedList={this.updateBreedList}/>:[];
   return (
     // <BreedPage/>
     <HashRouter>

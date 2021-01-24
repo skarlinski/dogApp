@@ -12,7 +12,7 @@ class BreedCard extends React.Component {
     }
 
     componentDidMount(){
-        axios.get(`https://dog.ceo/api/breed/${this.props.typeBreed}/images`)
+        axios.get(`https://dog.ceo/api/breed/${this.props.typeBreed}/images/random/1`)
         .then((r) =>{
            // console.log('becard',r);//data.message
            this.setState({srcBreed:r.data.message[0]});

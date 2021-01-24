@@ -3,8 +3,7 @@ import React from 'react';
 import { Button, ButtonGroup, Col, Form, Jumbotron, Row} from 'react-bootstrap';
 import BreedCard from './BreedCard';
 import NavBarDog from './NavBarDog';
-
-
+import { v4 as uuidv4 } from 'uuid';
 class BreedList extends React.Component {
     constructor(props){
         super(props);
@@ -41,8 +40,9 @@ class BreedList extends React.Component {
     }
     getDogs = ()=>{
         console.log('img')
+        
         const BreedCardsUpdate = this.state.breendList.map( (breed, index) => {
-            return <BreedCard key={index} typeBreed={breed}/>});
+            return <BreedCard key={uuidv4()} typeBreed={breed}/>});
         return BreedCardsUpdate;
     }
     

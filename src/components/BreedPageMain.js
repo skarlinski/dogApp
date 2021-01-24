@@ -1,17 +1,11 @@
-import axios from 'axios';
 import React from 'react';
 import { Button, Col, Jumbotron, Row} from 'react-bootstrap';
-import BreedList from './BreedList';
-import BreedCard from './BreedCard';
 import NavBarDog from './NavBarDog';
 
 
-class BreedPage extends React.Component{
+class BreedPageMain extends React.Component{
     constructor(props){
         super(props)
-        this.state={
-            breendList:[]
-        }
     }
 
     render(){
@@ -32,4 +26,4 @@ class BreedPage extends React.Component{
     }
 }
 
-export default BreedPage;
+export default BreedPageMain;

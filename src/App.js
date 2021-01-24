@@ -1,30 +1,45 @@
 import './App.css';
-import BreedPage from './components/BreedPage';
+import React from 'react';
+import BreedPageMain from './components/BreedPageMain';
 import BreedList from './components/BreedList';
+import BreedGallery from './components/BreedGallery';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 
-function App() {
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state= {
+      isShowBreeds:true
+    }
+  }
+  updateBreedList= ()=>{
+    this.setState({isShowBreeds:false});
+    this.setState({isShowBreeds:true});
+  }
+  render(){
+    const showBreedsList =this.state.isShowBreeds==true ?  <BreedList updateBreedList={this.updateBreedList}/>:null;
   return (
     // <BreedPage/>
     <HashRouter>
       <Switch>
         <Route exact path="/">
-          <BreedPage/> 
+          <BreedPageMain/> 
+        </Route>
+        <Route exact path="/breeds/:currentBreed">
+          <BreedGallery/>
         </Route>
         <Route exact path="/breeds">
-          <BreedList/>
+          {/* <BreedList updateBreedList={this.updateBreedList}/> */}
+          {showBreedsList}
         </Route>
         <Route path='/about'>
           about page!
         </Route>
       </Switch>
       </HashRouter>
-
-
-
-  );
+  );}
 }
 
 export default App;
